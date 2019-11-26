@@ -2,13 +2,14 @@
 
 A command line application that counts top JavaScripts libraries used in web​ ​pages​ ​found​ ​on​ ​Google.
 
-###Build project
+### Build project
 ./gradlew clean build
 
-###Execute project
+### Execute project
 java -jar <application jar> "search term" numberOfResult
-####Example:
+#### Example:
 java -jar build/libs/jslibcounter-0.0.1-SNAPSHOT.jar "Hello world" 5
 
-####output
+#### output
+
 ![Alt text](output_result.png? "Output result")
