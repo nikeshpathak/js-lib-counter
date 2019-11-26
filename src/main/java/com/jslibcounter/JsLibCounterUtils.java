@@ -34,6 +34,12 @@ public class JsLibCounterUtils {
 
     static Logger logger = LoggerFactory.getLogger(JsLibCounterUtils.class);
 
+    /**
+     * use this method to get list of js library used on web using executor service
+     * @param webPageLinks
+     * @return List<String> return list of library name
+     * @throws InterruptedException
+     */
      List<String> getListOfJsLibUsedOnWebUsingExecutorService(List<String> webPageLinks) throws InterruptedException {
         List<String> libraryName = new ArrayList<>();
         ExecutorService executorService = Executors.newFixedThreadPool(webPageLinks.size() <= 15?webPageLinks.size():15);
@@ -46,9 +52,9 @@ public class JsLibCounterUtils {
     }
 
     /**
-     *
-     * @param listOfLibName
-     * @return return most used library name
+     * this will grouped most used library and return as String value.
+     * @param listOfLibName list of lib name and max ordering we looking for.
+     * @return return most used library name as String
      */
       String mostUsedLibrary(List<String> listOfLibName,int max){
         int counter = 0;
@@ -61,6 +67,11 @@ public class JsLibCounterUtils {
         return stringBuilder.toString();
     }
 
+    /**
+     * this will return list of js library when pass single website link
+     * @param webLink web link string as parameter
+     * @return List of string
+     */
       List<String> getListOfWebLibrary(String webLink){
         try {
             Document doc = Jsoup.connect(webLink).get();

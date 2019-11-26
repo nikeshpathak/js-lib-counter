@@ -26,7 +26,6 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 @SpringBootApplication
 public class JslibcounterApplication implements CommandLineRunner {
